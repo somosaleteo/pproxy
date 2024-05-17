@@ -8,7 +8,11 @@ class CreamIceCreamMachine {
   final List<MilkBasedIceCream> iceCreams;
 
   Future<MilkBasedIceCream> produceIceCream() async {
-    await Future<void>.delayed(Duration(seconds: 3 + Random().nextInt(4)));
+    await Future<void>.delayed(
+      Duration(
+        seconds: 1 + Random().nextInt(3),
+      ),
+    );
     return iceCreams[Random().nextInt(iceCreams.length)];
   }
 }

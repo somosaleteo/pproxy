@@ -19,7 +19,7 @@ class HeladoWidget extends StatelessWidget {
       decoration: BoxDecoration(
         color: isWaterBased ? Colors.lightBlue[100] : Colors.pink[100],
         borderRadius: BorderRadius.circular(10),
-        boxShadow: [
+        boxShadow: <BoxShadow>[
           BoxShadow(
             color: Colors.grey.withOpacity(0.5),
             spreadRadius: 5,
@@ -30,7 +30,7 @@ class HeladoWidget extends StatelessWidget {
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
-        children: [
+        children: <Widget>[
           Icon(
             Icons.icecream,
             size: 64,
@@ -50,10 +50,12 @@ class HeladoWidget extends StatelessWidget {
             'Ingredients:',
             style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           ),
-          ...iceCream.ingredients.map((IngredientsEnum ingredient) => Text(
-                ingredient.name,
-                style: const TextStyle(fontSize: 14),
-              )),
+          ...iceCream.ingredients.map(
+            (IngredientsEnum ingredient) => Text(
+              ingredient.name,
+              style: const TextStyle(fontSize: 14),
+            ),
+          ),
         ],
       ),
     );

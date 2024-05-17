@@ -10,7 +10,9 @@ class WaterIceCreamMachine {
   final List<WaterBasedIceCream> iceCreams;
 
   Future<WaterBasedIceCream> produceIceCream() async {
-    await Future.delayed(Duration(milliseconds: 100 + Random().nextInt(400)));
+    await Future<void>.delayed(
+      Duration(milliseconds: 100 + Random().nextInt(400)),
+    );
     return iceCreams[Random().nextInt(iceCreams.length)];
   }
 }
